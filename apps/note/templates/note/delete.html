@@ -1,0 +1,17 @@
+{% extends 'note/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+        <h1>Are you sure you want to delete this ?</h1>
+            <form method="post">
+            {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" value="Yes" class="btn btn-info">
+                <a href="{% url 'home' %}" class="btn btn-info">No</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

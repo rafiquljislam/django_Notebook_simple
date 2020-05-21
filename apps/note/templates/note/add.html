@@ -1,0 +1,18 @@
+{% extends 'note/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+.textarea{
+    height:294px;
+}
+</style>
+<div class="container">
+    <div class="my-3">
+        <form method="post">
+            {% csrf_token %}
+                {{ form|crispy }}
+            <input class='my-1 btn btn-info' type="submit">
+        </form>
+    </div>
+</div>
+{% endblock content %}
